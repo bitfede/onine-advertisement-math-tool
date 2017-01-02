@@ -29,6 +29,10 @@ def calc_CPA(cpc, cvr):
 	cpa = (cpc * 100.0) / cvr
 	return cpa
 
+def calc_eCPM(ctr, cvr, payout):
+	ecpm = (ctr * cvr * payout) / 10.0
+	return ecpm
+
 def main():
 	print "Enter the number corresponding to what you want to calculate"
 	#choices
@@ -40,6 +44,7 @@ def main():
 	print "[4] CVR - Conversion Rate"
 	print "[5] EPC - Earning per Click"
 	print "[6] CPA - Cost per Acion"
+	print "[7] eCPM - Effective Cost per Mille"
 
 	#get choice from user
 	choice = input("Enter your choice: ")
@@ -87,6 +92,12 @@ def main():
 		cvr = input("Please enter your CVR in % (example 5): ")
 		cpa = calc_CPA(cpc, cvr)
 		print "$" + str(cpa)
+	elif choice == 7:
+		ctr = input("Please enter your CTR as a % (example 1): ")
+		cvr = input("Please enter your CVR as a % (example 5): ")
+		payout = input("Please enter your payout: $")
+		ecpm = calc_eCPM(ctr, cvr, payout)
+		print "$" + str(ecpm)
 	else:
 		print "fu"
 
