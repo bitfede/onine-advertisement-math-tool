@@ -25,6 +25,10 @@ def calc_EPC(payout, cvr):
 	epc = (payout * cvr) / 100.0
 	return epc
 
+def calc_CPA(cpc, cvr):
+	cpa = (cpc * 100.0) / cvr
+	return cpa
+
 def main():
 	print "Enter the number corresponding to what you want to calculate"
 	#choices
@@ -35,6 +39,8 @@ def main():
 	print "------ Offer Math ------"
 	print "[4] CVR - Conversion Rate"
 	print "[5] EPC - Earning per Click"
+	print "[6] CPA - Cost per Acion"
+
 	#get choice from user
 	choice = input("Enter your choice: ")
 
@@ -42,12 +48,12 @@ def main():
 	
 	if choice == 1:
 		cpc = input("Plase enter your CPC (example $0.50): $")
-		ctr = input("Please enter your CTR in % (example 1): ")
+		ctr = input("Please enter your CTR as a % (example 1): ")
 		cpm = calc_CPM(cpc, ctr)
 		print "$" + str(cpm)
 	elif choice == 2:
 		cpm = input("Please enter your CPM (example $5): $")
-		ctr = input("Please enter your CTR in % (example 1): ")
+		ctr = input("Please enter your CTR as a % (example 1): ")
 		cpc = calc_CPC(cpm, ctr)
 		print "$" + str(cpc)
 	elif choice  == 3:
@@ -73,9 +79,14 @@ def main():
 		print str(cvr) + "%"
 	elif choice == 5:
 		payout = input("Please enter your payout: $")
-		cvr = input("Please enter your CVR in % (example 5): ")
+		cvr = input("Please enter your CVR as a % (example 5): ")
 		epc = calc_EPC(payout, cvr)
 		print "$" + str(epc) 
+	elif choice == 6:
+		cpc = input("Please enter your CPC (example $0.20): $")
+		cvr = input("Please enter your CVR in % (example 5): ")
+		cpa = calc_CPA(cpc, cvr)
+		print "$" + str(cpa)
 	else:
 		print "fu"
 
