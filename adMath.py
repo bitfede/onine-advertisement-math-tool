@@ -33,6 +33,19 @@ def calc_eCPM(ctr, cvr, payout):
 	ecpm = (ctr * cvr * payout) / 10.0
 	return ecpm
 
+def calc_profit_cpcepc(epc, cpc, ad_spend):
+	profit = ( (epc - cpc) * ad_spend) / (cpc + 0.00)
+	return profit
+def calc_profit_ecpmcpm(ecpm, cpm, ad_spend):
+	profit = ( (ecpm - cpm) * ad_spend) / (cpm + 0.00)
+	return profit
+def calc_profit_payoutcpa(payout, cpa, ad_spend):
+	profit = ( (payout - cpa) * ad_spend) / (cpa + 0.00)
+	return profit
+def calc_profit_roispend(roi, spend):
+	profit = (roi * spend) / 100.0
+	return profit
+
 def main():
 	print "Enter the number corresponding to what you want to calculate"
 	#choices
@@ -106,16 +119,31 @@ def main():
 		print "If you have: payout, CPA, total spend on ads, enter [3]"
 		print "If you have: ROI, spend, enter [4]"
 		profit_choice = input("Enter your choice: ")
-			if profit_choice == 1:
-				print "choice 1"
-			elif profit_choice == 2:
-				print "choice 2"
-			elif profit_choice == 3:
-				print "choice 3"
-			elif profit_choice == 4:
-				print "choice 4"
-			else:
-				print "Incorrect Choice."
+		if profit_choice == 1:
+			epc = input("Please enter your EPC (example $0.10): $")
+			cpc = input("Please enter your CPC (example $0.20): $")
+			ad_spend = input("Please enter your total spend on ads: $")
+			profit = calc_profit_cpcepc(epc, cpc, ad_spend)
+			print "$" + str(profit)
+		elif profit_choice == 2:
+			ecpm = input("Please enter your eCPM (example $10): $")
+			cpm = input("Please enter your CPM (example $5): $")
+			ad_spend = input("Please enter your total spend on ads: $")
+			profit = calc_profit_ecpmcpm(ecpm, cpm, ad_spend)
+			print "$" + str(profit)
+		elif profit_choice == 3:
+			payout = input("Please enter your payout (example $2): $")
+			cpa = input("Please enter your CPA (example $1): $")
+			ad_spend = input("Please enter your total spend on ads: $")
+			profit = calc_profit_payoutcpa(payout, cpa, ad_spend)
+			print "$" + str(profit)
+		elif profit_choice == 4:
+			roi = input("Please enter your ROI as a % (example 300): ")
+			spend = input("Please enter your maximum spend a day (example $5): $")
+			profit = calc_profit_roispend(roi, spend)
+			print "$" + str(profit)
+		else:
+			print "Incorrect Choice."
 	else:
 		print "fu"
 
