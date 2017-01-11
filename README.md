@@ -17,11 +17,17 @@ CTR - Clickthrough Rate
 ###Offer Math
 
 CVR  - Conversion Rate
+
 EPC  - Earning per Click
+
 CPA  - Cost per Acion
+
 eCPM - Effective Cost per Mille
+
 
 ###Profitability Math
 
 P/L  - Profit / Loss
+
 ROI  - Return of Investment [not yet implemented, work in progress]
+
