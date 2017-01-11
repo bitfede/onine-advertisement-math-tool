@@ -102,8 +102,20 @@ def main():
 		print "$" + str(ecpm)
 	elif choice == 8:
 		print "If you have: EPC, CPC, total spend on ads, enter [1]"
-		print "If you have: CPM and CPC enter [2]"
+		print "If you have: eCPM, CPM, total spend on ads, enter [2]"
+		print "If you have: payout, CPA, total spend on ads, enter [3]"
+		print "If you have: ROI, spend, enter [4]"
 		profit_choice = input("Enter your choice: ")
+			if profit_choice == 1:
+				print "choice 1"
+			elif profit_choice == 2:
+				print "choice 2"
+			elif profit_choice == 3:
+				print "choice 3"
+			elif profit_choice == 4:
+				print "choice 4"
+			else:
+				print "Incorrect Choice."
 	else:
 		print "fu"
 
