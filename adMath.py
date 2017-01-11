@@ -37,15 +37,17 @@ def main():
 	print "Enter the number corresponding to what you want to calculate"
 	#choices
 	print "------- Ad Math --------"
-	print "[1] CPM - Cost per Mille"
-	print "[2] CPC - Cost per Click"
-	print "[3] CTR - Clickthrough Rate"
+	print "[1] CPM  - Cost per Mille"
+	print "[2] CPC  - Cost per Click"
+	print "[3] CTR  - Clickthrough Rate"
 	print "------ Offer Math ------"
-	print "[4] CVR - Conversion Rate"
-	print "[5] EPC - Earning per Click"
-	print "[6] CPA - Cost per Acion"
+	print "[4] CVR  - Conversion Rate"
+	print "[5] EPC  - Earning per Click"
+	print "[6] CPA  - Cost per Acion"
 	print "[7] eCPM - Effective Cost per Mille"
-
+	print "-- Profitability Math --"
+	print "[8] P/L  - Profit / Loss"
+	print ""
 	#get choice from user
 	choice = input("Enter your choice: ")
 
@@ -62,9 +64,9 @@ def main():
 		cpc = calc_CPC(cpm, ctr)
 		print "$" + str(cpc)
 	elif choice  == 3:
-		print "If you have: number of clicks and views enter [1]"
-		print "If you have: CPM and CPC enter [2]"
-		ctr_choice = input("Your choice: ")
+		print "If you have: number of clicks and views, enter [1]"
+		print "If you have: CPM and CPC, enter [2]"
+		ctr_choice = input("Enter your choice: ")
 		if ctr_choice == 1:
 			clicks = input("Please enter the number of clicks: ")
 			views = input("Please enter the number of views: ")
@@ -98,6 +100,10 @@ def main():
 		payout = input("Please enter your payout: $")
 		ecpm = calc_eCPM(ctr, cvr, payout)
 		print "$" + str(ecpm)
+	elif choice == 8:
+		print "If you have: EPC, CPC, total spend on ads, enter [1]"
+		print "If you have: CPM and CPC enter [2]"
+		profit_choice = input("Enter your choice: ")
 	else:
 		print "fu"
 
