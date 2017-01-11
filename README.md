@@ -11,8 +11,11 @@ First download the python file. Once downloaded, go to your terminal and walk to
 ###General Ad Math
 
 CPM - Cost per Mille
+
 CPC - Cost per Click
+
 CTR - Clickthrough Rate
+
 
 ###Offer Math
 
